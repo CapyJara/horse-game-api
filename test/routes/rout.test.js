@@ -18,8 +18,6 @@ describe('route tests', () => {
         score: 100,
         totalTime: 3600,
         timeOfDay: 1620,
-        location: '1234321342',
-        ip: '12345432'
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -28,8 +26,7 @@ describe('route tests', () => {
           score: 100,
           totalTime: 3600,
           timeOfDay: 1620,
-          location: '1234321342',
-          ip: '12345432'
+          ip: expect.any(Object)
         });
       });
   });
