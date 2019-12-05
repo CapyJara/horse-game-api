@@ -7,7 +7,7 @@ describe('model test', () => {
       name: 'jimmy',
       score: 100,
       totalTime: 3600,
-      timeOfDay: 1620,
+      date: Date.now(),
       ip: {
         range: [1100616832, 1100616959],
         country: 'US',
@@ -25,7 +25,7 @@ describe('model test', () => {
       name: 'jimmy',
       score: 100,
       totalTime: 3600,
-      timeOfDay: 1620,
+      date: expect.any(Number),
       ip: {
         range: [1100616832, 1100616959],
         country: 'US',

@@ -6,8 +6,10 @@ const connect = require('../../lib/utils/connect');
 const seeData = require('../utils/seedData');
 
 beforeAll(() => connect());
-beforeEach(() => mongoose.connection.dropDatabase());
-beforeEach(() => seeData());
+beforeEach(async() => {
+  await mongoose.connection.dropDatabase();
+  await seeData();
+});
 afterAll(() => mongoose.connection.close());
 
 describe('game routes', () => {
@@ -19,7 +21,7 @@ describe('game routes', () => {
         name: 'jimmy',
         score: 100,
         totalTime: 3600,
-        timeOfDay: 1620,
+        date: Date.now(),
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -27,7 +29,7 @@ describe('game routes', () => {
           name: 'jimmy',
           score: 100,
           totalTime: 3600,
-          timeOfDay: 1620,
+          date: expect.any(Number),
           ip: {
             range: [1100616832, 1100616959],
             country: 'US',

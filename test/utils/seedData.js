@@ -7,7 +7,7 @@ function seedGames(userCount = 150) {
     name: chance.name(),
     score: Math.floor(Math.random() * Math.floor(2000)),
     totalTime: Math.floor(Math.random() * Math.floor(3600)),
-    timeOfDay: Math.floor(Math.random() * Math.floor(2400)),
+    date: Date.now(),
     ip: {
       range: [1100616832, 1100616959],
       country: 'US',
