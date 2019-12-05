@@ -48,8 +48,12 @@ describe('game routes', () => {
       .get('/api/v1/game/top/3')
       .then(res => {
         expect(res.body.length).toEqual(3);
-        expect(res.body[0].score).toBeGreaterThan(res.body[1].score);
-        expect(res.body[1].score).toBeGreaterThan(res.body[2].score);
+        expect(res.body[0].score).toBeGreaterThanOrEqual(res.body[1].score);
+        expect(res.body[1].score).toBeGreaterThanOrEqual(res.body[2].score);
+        expect(res.body[0]).toEqual({
+          name: expect.any(String),
+          score: expect.any(Number)
+        });
       });
   });
 
