@@ -2,7 +2,7 @@ const chance = require('chance').Chance();
 const Game = require('../../lib/models/Game');
 
 
-function seedGames(userCount = 150) {
+function seedGames(userCount = 1000) {
   const games = [...Array(userCount)].map(() => ({
     name: chance.name(),
     score: Math.floor(Math.random() * Math.floor(2000)),

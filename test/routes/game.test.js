@@ -59,4 +59,28 @@ describe('game routes', () => {
       });
   });
 
+  it('aggs the av time for time zones', () => {
+    return request(app)
+      .get('/api/v1/game/graphs')
+      .then(res => {
+        expect(res.body).toEqual([
+          { 'one': expect.any(Number) },
+          { 'five': expect.any(Number) },
+          { 'ten': expect.any(Number) },
+          { 'thirty': expect.any(Number) },
+          { 'hour': expect.any(Number) }, 
+          { 'hourPlus': expect.any(Number) }
+        ]);
+      });
+  });
+
+  it.only('gets games from today forward', () => {
+    return request(app)
+      .get('/api/v1/game//gameswithindays/day')
+      .then(res => {
+        expect(res.body[0].date).toBeGreaterThan(Date.now());
+
+      });
+  });
+
 });
