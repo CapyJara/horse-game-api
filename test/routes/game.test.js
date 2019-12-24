@@ -76,7 +76,7 @@ describe('game routes', () => {
 
   it.only('gets games from today forward', () => {
     return request(app)
-      .get('/api/v1/game//gameswithindays/day')
+      .get('/api/v1/game/gameswithindays/day')
       .then(res => {
         expect(res.body[0].date).toBeGreaterThan(Date.now());
 
