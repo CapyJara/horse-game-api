@@ -61,7 +61,7 @@ describe('game routes', () => {
 
   it('aggs the av time for time zones', () => {
     return request(app)
-      .get('/api/v1/game/graphs')
+      .get('/api/v1/game/stats')
       .then(res => {
         expect(res.body).toEqual([
           { 'one': expect.any(Number) },
