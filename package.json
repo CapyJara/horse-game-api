@@ -28,8 +28,8 @@
   "scripts": {
     "test": "jest --verbose --runInBand",
     "test:watch": "npm run test -- --watch",
-    "start": "node server.js",
-    "start:watch": "nodemon server.js",
+    "dev": "nodemon server.js",
+    "prod": "NODE_ENV=prod nodemon server.js",
     "seed": "node test/utils/index.js"
   },
   "keywords": [],
